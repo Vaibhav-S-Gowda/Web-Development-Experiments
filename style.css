@@ -11,3 +11,20 @@ html, body{
 p{
     background: linear-gradient(orange, red);
 }
+
+h1{
+    color: brown;
+    background-color: beige;
+    font-family: monument;
+}
+
+#box{
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+}
+#box2{
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+}
