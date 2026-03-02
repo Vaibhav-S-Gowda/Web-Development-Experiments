@@ -22,10 +22,11 @@ p{
     height: 100%;
     width: 100%;
     background-color: aquamarine;
+    padding-top: 1px;
 }
 #box2{
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     background-color: brown;
     margin-left: 200px;
     margin-top: 100px;
