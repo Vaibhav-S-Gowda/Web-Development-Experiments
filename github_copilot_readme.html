@@ -1,45 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
     <style>
-        :root {
+        /* CSS Variables for easy theme switching */
+        [data-theme="dark"] {
             --bg-color: #0d1117;
+            --container-bg: #0d1117;
             --card-bg: #161b22;
             --border-color: #30363d;
             --text-main: #c9d1d9;
             --text-muted: #8b949e;
             --accent: #58a6ff;
-            --highlight: #238636;
+            --card-hover-border: #8b949e;
+            --toggle-bg: #30363d;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f6f8fa;
+            --container-bg: #ffffff;
+            --card-bg: #ffffff;
+            --border-color: #d0d7de;
+            --text-main: #24292f;
+            --text-muted: #57606a;
+            --accent: #0969da;
+            --card-hover-border: #0969da;
+            --toggle-bg: #afb8c1;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
         }
 
+        /* Floating Theme Toggle */
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .theme-button {
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: var(--toggle-bg);
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .theme-button:hover {
+            transform: scale(1.05);
+        }
+
         .container {
             max-width: 850px;
-            margin: 0 auto;
+            margin: 40px auto;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 40px;
-            background-color: var(--bg-color);
+            background-color: var(--container-bg);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
         h1, h2, h3 { border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
-        h1 { font-size: 2rem; border-bottom: none; }
+        h1 { font-size: 2rem; border-bottom: none; margin-top: 0; }
         
-        a { color: var(--accent); text-decoration: none; }
+        a { color: var(--accent); text-decoration: none; transition: 0.2s; }
         a:hover { text-decoration: underline; }
-
-        hr { border: 0; border-top: 1px solid var(--border-color); margin: 24px 0; }
 
         .skills-grid {
             display: grid;
@@ -47,35 +88,40 @@
             gap: 20px;
         }
 
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
         .stats-container img {
             max-width: 100%;
             height: auto;
             border-radius: 6px;
+            margin-bottom: 10px;
         }
 
+        /* Project Card Hover Animation */
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        box-shadow 0.3s ease, 
+                        border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         .badge {
             display: inline-block;
-            background: #21262d;
+            background: var(--toggle-bg);
             border: 1px solid var(--border-color);
-            padding: 2px 8px;
-            border-radius: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.85rem;
             margin: 4px;
+            transition: background 0.3s ease;
         }
 
         .footer {
@@ -88,22 +134,24 @@
 </head>
 <body>
 
+<div class="theme-switch-wrapper">
+    <button class="theme-button" onclick="toggleTheme()" id="theme-btn">🌙 Dark Mode</button>
+</div>
+
 <div class="container">
     <header>
         <h1>Hi there! 👋</h1>
         <p>Welcome to my GitHub profile! I'm a passionate developer dedicated to building innovative solutions and contributing to the open-source community.</p>
     </header>
 
-    <hr>
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
 
     <section>
         <h2>🚀 About Me</h2>
-        <p>I'm a software developer with a keen interest in creating impactful applications and collaborating with talented teams. I believe in clean code, continuous learning, and sharing knowledge with the community.</p>
+        <p>I believe in clean code, continuous learning, and sharing knowledge with the community.</p>
         <ul>
             <li>💻 Experienced in full-stack development</li>
             <li>🎯 Passionate about solving complex problems</li>
-            <li>🤝 Active contributor to open-source projects</li>
-            <li>📚 Lifelong learner and tech enthusiast</li>
         </ul>
     </section>
 
@@ -114,15 +162,11 @@
                 <h3>Languages</h3>
                 <span class="badge">JavaScript/TypeScript</span>
                 <span class="badge">Python</span>
-                <span class="badge">Java</span>
-                <span class="badge">SQL</span>
             </div>
             <div>
                 <h3>Frameworks</h3>
                 <span class="badge">React / Vue.js</span>
-                <span class="badge">Node.js / Express</span>
-                <span class="badge">Docker</span>
-                <span class="badge">Git & GitHub</span>
+                <span class="badge">Node.js</span>
             </div>
         </div>
     </section>
@@ -130,39 +174,26 @@
     <section>
         <h2>📈 GitHub Stats</h2>
         <div class="stats-container">
-            <img src="https://github-readme-stats.vercel.app/api?username=Vaibhav-S-Gowda&show_icons=true&theme=radical" alt="GitHub Stats">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vaibhav-S-Gowda&layout=compact&theme=radical" alt="Top Languages">
+            <img src="https://github-readme-stats.vercel.app/api?username=Vaibhav-S-Gowda&show_icons=true&theme=radical" alt="Stats">
         </div>
     </section>
 
     <section>
         <h2>🎯 Featured Projects</h2>
         <div class="project-card">
-            <h3><a href="https://github.com/Vaibhav-S-Gowda/project-1">Project Name 1</a></h3>
+            <h3><a href="#">Project Name 1</a></h3>
             <p>Brief description of what this project does and the technologies used.</p>
         </div>
         <div class="project-card">
-            <h3><a href="https://github.com/Vaibhav-S-Gowda/project-2">Project Name 2</a></h3>
+            <h3><a href="#">Project Name 2</a></h3>
             <p>Brief description of what this project does and the technologies used.</p>
         </div>
     </section>
 
     <section>
-        <h2>🌱 Currently Learning</h2>
-        <ul>
-            <li>Advanced TypeScript patterns</li>
-            <li>Cloud architecture (AWS/GCP)</li>
-            <li>Machine Learning fundamentals</li>
-            <li>DevOps best practices</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>📞 Connect With Me</h2>
+        <h2>📞 Connect</h2>
         <p>
-            <strong>LinkedIn:</strong> <a href="#">Your Profile</a> | 
-            <strong>Twitter:</strong> <a href="#">@YourHandle</a> | 
-            <strong>Email:</strong> your.email@example.com
+            <a href="#">LinkedIn</a> • <a href="#">Twitter</a> • <a href="#">Portfolio</a>
         </p>
     </section>
 
@@ -170,6 +201,21 @@
         Last updated: 2026-03-06
     </div>
 </div>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const btn = document.getElementById('theme-btn');
+        
+        if (html.getAttribute('data-theme') === 'dark') {
+            html.setAttribute('data-theme', 'light');
+            btn.innerHTML = '☀️ Light Mode';
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            btn.innerHTML = '🌙 Dark Mode';
+        }
+    }
+</script>
 
 </body>
 </html>
