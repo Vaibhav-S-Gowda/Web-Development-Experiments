@@ -45,10 +45,24 @@ h1{
     height: 100%;
     width: 100%;
     background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #child1{
     height: 200px;
     width: 200px;
     background-color: brown;
+}
+
+#child2{
+    height: 200px;
+    width: 200px;
+    background-color: salmon;
+}
+#child3{
+    height: 200px;
+    width: 200px;
+    background-color: chocolate;
 }
