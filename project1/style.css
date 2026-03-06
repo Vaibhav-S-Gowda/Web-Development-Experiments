@@ -26,6 +26,7 @@ html, body{
     padding: 0px 40px;
 }
 
+/* Nav left section */
 #nav-part1{
     display: flex;
     align-items: center;
@@ -33,7 +34,8 @@ html, body{
     gap: 5px;
 }
 
-#nav h3, i{
+/* Menu button + icon */
+#nav h3, #nav i{
     font-size: 17px;
     border: 1.5px solid #000;
     font-weight: 500;
@@ -41,23 +43,33 @@ html, body{
     border-radius: 50px;
 }
 
+/* Logo */
 #nav h2{
     font-weight: 500;
     font-size: 22px;
     text-transform: uppercase;
 }
 
-#nav button{
+/* Base button style */
+.btn{
     padding: 7px 12px;
     border-radius: 50px;
     border: 1.5px solid #000;
     font-size: 16px;
     font-weight: 500;
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
-#signin-btn{
-    border: none;
-    color: aliceblue;
+/* Login button */
+.btn-login{
+    background-color: whitesmoke;
+    color: black;
+}
+
+/* Sign in button */
+.btn-primary{
     background-color: orangered;
+    color: white;
+    border: none;
 }
