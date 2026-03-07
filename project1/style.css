@@ -73,3 +73,51 @@ html, body{
     color: white;
     border: none;
 }
+
+#main > h1{
+    font-size: 100px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    object-position: top;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+}
+
+#pic1{
+    transform: translate(-50%, -50%) rotate(-28deg);
+}
+
+#pic2{
+    transform: translate(-50%, -50%) rotate(-21deg);
+    object-position: bottom;
+}
+
+#pic3{
+    transform: translate(-50%, -50%) rotate(-14deg);
+}
+
+#pic4{
+    transform: translate(-50%, -50%) rotate(-7deg);
+    object-position: center;
+}
+
+#btm-left{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 15px;
+}
