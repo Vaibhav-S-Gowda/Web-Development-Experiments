@@ -155,7 +155,8 @@
             transition: background 0.2s;
         }
 
-        .submit-btn:hover { background: var(--accent-hover); }
+        .submit-btn:hover:not(:disabled) { background: var(--accent-hover); }
+        .submit-btn:disabled { background: var(--border-color); cursor: not-allowed; opacity: 0.7; }
 
         /* Success Message Styling */
         #form-status {
@@ -248,6 +249,7 @@
         <p>Fill out the form below to discuss clinical cases, collaborations, or inquiries.</p>
         
         <form id="my-form" action="https://formspree.io/f/xwvrkjkg" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" value="New Inquiry from Dental Portfolio">
             <div class="form-group">
                 <label for="full-name">Full Name</label>
                 <input type="text" id="full-name" name="name" placeholder="Dr. John Doe" required>
@@ -276,12 +278,12 @@
 
         <div style="margin-top: 25px; text-align: center;">
             <a href="https://www.linkedin.com/in/rohith-l-n-5945a6353/" target="_blank">LinkedIn</a> • 
-            <a href="mailto:lnrohith04@gmail.com">Direct Email</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lnrohith04@gmail.com" target="_blank">Direct Email (Gmail)</a>
         </div>
     </section>
 
     <div class="footer">
-        Last updated: 2026-03-07 | Dr. Rohith - Clinician Portfolio
+        Last updated: 2026-03-08 | Dr. Rohith - Clinician Portfolio
     </div>
 </div>
 
@@ -300,9 +302,15 @@
 
     var form = document.getElementById("my-form");
     var status = document.getElementById("form-status");
+    var button = document.getElementById("submit-btn");
 
     async function handleSubmit(event) {
       event.preventDefault();
+      
+      // Update button state
+      button.disabled = true;
+      button.innerHTML = "Sending...";
+
       var data = new FormData(event.target);
       fetch(event.target.action, {
         method: form.method,
@@ -314,12 +322,16 @@
         if (response.ok) {
           status.style.display = "block";
           form.style.display = "none";
-          form.reset()
+          form.reset();
         } else {
-          alert("Error: Ensure you replaced PASTE_YOUR_UNIQUE_ID_HERE with your Formspree ID.");
+          button.disabled = false;
+          button.innerHTML = "Send Inquiry";
+          alert("Error: Please ensure you verified your email in the Formspree activation email.");
         }
       }).catch(error => {
-        alert("Oops! There was a problem submitting your form");
+        button.disabled = false;
+        button.innerHTML = "Send Inquiry";
+        alert("Oops! There was a network problem submitting your form.");
       });
     }
     form.addEventListener("submit", handleSubmit)
