@@ -69,8 +69,44 @@ html, body{
 }
 
 #about{
-    height: 45%;
+    height: 60%;
     width: 100%;
     background-color: azure;
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+}
+
+#about h2{
+    width: 65%;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 68px;
+    letter-spacing: -3px;
+    padding: 0 10px;
+}
+
+#about-socials{
+    width: 40%;
+    height: 100%;
+    border-left: 2px solid #000;
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#about-socials h3{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#icons i{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 27px;
+    border-radius: 25px;
+    margin-right: 12px;
 }
