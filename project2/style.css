@@ -15,8 +15,27 @@ html, body{
     width: 100%;
 }
 
+#nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 30px 40px;
+}
+
+#nav h3{
+    background-color: black;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 22px;
+    margin-left: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
 #intro{
-    height: 37%;
+    height: 40%;
     width: 100%;
     /* background-color: antiquewhite; */
     padding: 30px 50px;
