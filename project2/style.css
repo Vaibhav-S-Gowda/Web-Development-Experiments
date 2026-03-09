@@ -67,3 +67,10 @@ html, body{
     background-size: cover;
     background-position: right center;
 }
+
+#about{
+    height: 45%;
+    width: 100%;
+    background-color: azure;
+    
+}
