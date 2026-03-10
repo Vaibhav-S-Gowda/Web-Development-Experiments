@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Tags</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        *::selection{
+            background-color: aqua;
+        }
+        *{
+            padding: 30px;
+            font-family: inter;
+        }
+        
+        #border{
+            border: 5px solid #000;
+            border-radius: 5px;
+            background: linear-gradient(rgb(255, 188, 62), rgb(255, 67, 67));
+        }
+
+        tr th, tr td{
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table id="border" cellspacing="10" cellpadding="15">
+    <!-- <caption>Fruit Juice Drinks</caption> -->
+    <tr>
+        <td rowspan="2"></td>
+        <th colspan="4">Fruit Juice Drinks</th></tr>
+        <tr>
+        <th>Apple</th>
+        <th>Orange</th>
+        <th>Screwdriver</th>
+        <th>Mango</th>
+    </tr>
+    <tr>
+        <th>Breakfast</th>
+        <td>0</td>
+        <td>1</td>
+        <td>3</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Lunch</th>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>0</td>
+    </tr>
+</table>
+
+</body>
+</html>
