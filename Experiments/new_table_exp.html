@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 150px;
+            padding-top: 50px;
         }
 
         #border{
@@ -25,6 +25,34 @@
 </head>
 <body>
     <table id="border" cellspacing="10" cellpadding="15">
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+                <td>Row 1 Data 3</td>
+                <td>Row 1 Data 4</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+                <td>Row 2 Data 3</td>
+                <td>Row 2 Data 4</td>
+            </tr>
+            <tr>
+                <td>Row 3 Data 1</td>
+                <td>Row 3 Data 2</td>
+                <td>Row 3 Data 3</td>
+                <td>Row 3 Data 4</td>
+            </tr>
+        </tbody>
         <tr align="center">
         <th></th>
         <th>Column Label</th>
@@ -43,6 +71,11 @@
         <td valign="bottom">Bottom</td>
         <td valign="top">Top</td>
     </tr>
+    <tfoot>
+        <tr>
+            <td colspan="4" align="center">Footer content</td>
+        </tr>
+    </tfoot>
     </table>
 </body>
 </html>
