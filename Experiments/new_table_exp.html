@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 150px;
+        }
+
+        #border{
+            border: 2px solid #000;
+            border-radius: 5px;
+            background: linear-gradient(rgb(255, 188, 62), rgb(255, 67, 67));
+        }
+
+        tr th, tr td{
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table id="border" cellspacing="10" cellpadding="15">
+        <tr align="center">
+        <th></th>
+        <th>Column Label</th>
+        <th>Another one</th>
+        <th>New Column</th>
+    </tr>
+    <tr>
+        <th>Align</th>
+        <td align="Left">Left</td>
+        <td align="center">Center</td>
+        <td align="Right">Right</td>
+    </tr>
+    <tr>
+        <th><br>valign <br><br></th>
+        <td>Default</td>
+        <td valign="bottom">Bottom</td>
+        <td valign="top">Top</td>
+    </tr>
+    </table>
+</body>
+</html>
