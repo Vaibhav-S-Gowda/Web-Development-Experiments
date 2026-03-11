@@ -8,6 +8,7 @@
 html, body{
     height: 100%;
     width: 100%;
+    background-color: azure;
 }
 
 #main{
@@ -37,7 +38,7 @@ html, body{
 #intro{
     height: 40%;
     width: 100%;
-    /* background-color: antiquewhite; */
+    background-color: azure;
     padding: 30px 50px;
 }
 
@@ -71,7 +72,6 @@ html, body{
 #about{
     height: 60%;
     width: 100%;
-    background-color: azure;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,4 +109,131 @@ html, body{
     font-size: 27px;
     border-radius: 25px;
     margin-right: 12px;
+}
+
+/* ================= WORK SECTION ================= */
+
+#work{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    padding: 40px 20px;
+}
+
+#work-wrapper{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    padding-top: 40px;
+    position: relative;
+}
+
+/* animated top line */
+
+#work-wrapper::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.8s ease;
+}
+
+#work.show #work-wrapper::before{
+    transform:scaleX(1);
+}
+
+#work1{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    font-size: 29px;
+    font-weight: 200;
+    position: relative;
+}
+
+/* animated vertical line */
+
+#work1::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:0;
+    width:2px;
+    height:100%;
+    background:black;
+
+    transform:scaleY(0);
+    transform-origin:top;
+    transition:transform 0.8s ease;
+}
+
+#work.show #work1::after{
+    transform:scaleY(1);
+}
+
+#work2{
+    height: 100%;
+    width: 70%;
+    padding: 0 60px;
+}
+
+.work2-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    position: relative;
+}
+
+/* animated middle divider */
+
+.work2-part:nth-child(1)::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.8s ease;
+}
+
+#work.show .work2-part:nth-child(1)::after{
+    transform:scaleX(1);
+}
+
+.work2-part .elem{
+    width: 50%;
+}
+
+.work2-part .elem:nth-child(1){
+    padding-right: 40px;
+    border-right: 2px solid #000;
+}
+
+.work2-part .elem:nth-child(2){
+    padding-left: 40px;
+}
+
+.work2-part .elem h4{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.work2-part .elem p{
+    font-size: 15px;
+    color: #5f5f5f;
+    font-weight: 500;
 }
