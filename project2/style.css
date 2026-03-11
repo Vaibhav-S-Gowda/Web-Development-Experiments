@@ -91,7 +91,7 @@ html, body{
     width: 40%;
     height: 100%;
     border-left: 2px solid #000;
-    padding: 25px 50px;
+    padding: 25px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -111,72 +111,32 @@ html, body{
     margin-right: 12px;
 }
 
-/* ================= WORK SECTION ================= */
-
 #work{
-    height: 75%;
+    height: 67%;
     width: 100%;
+    /* border-top: 2px solid #000; */
     display: flex;
-    padding: 40px 20px;
+    padding: 40px 40px;
 }
 
 #work-wrapper{
-    width: 100%;
-    margin: 20px;
+    width: 95%;
+    margin: 0 auto;
+    border-top: 2px solid #000;
     display: flex;
-    padding-top: 40px;
-    position: relative;
-}
-
-/* animated top line */
-
-#work-wrapper::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:2px;
-    background:black;
-
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform 0.8s ease;
-}
-
-#work.show #work-wrapper::before{
-    transform:scaleX(1);
+    padding-top: 30px;
 }
 
 #work1{
     height: 100%;
-    width: 35%;
+    width: 40%;
     display: flex;
+    /* background-color: aqua; */
     justify-content: space-between;
+    border-right: 2px solid #000;
     padding-right: 50px;
     font-size: 29px;
     font-weight: 200;
-    position: relative;
-}
-
-/* animated vertical line */
-
-#work1::after{
-    content:"";
-    position:absolute;
-    right:0;
-    top:0;
-    width:2px;
-    height:100%;
-    background:black;
-
-    transform:scaleY(0);
-    transform-origin:top;
-    transition:transform 0.8s ease;
-}
-
-#work.show #work1::after{
-    transform:scaleY(1);
 }
 
 #work2{
@@ -190,27 +150,11 @@ html, body{
     align-items: center;
     justify-content: space-between;
     padding: 30px 0;
-    position: relative;
 }
 
-/* animated middle divider */
-
-.work2-part:nth-child(1)::after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:2px;
-    background:black;
-
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform 0.8s ease;
-}
-
-#work.show .work2-part:nth-child(1)::after{
-    transform:scaleX(1);
+.work2-part:nth-child(1){
+    padding-top: 0;
+    border-bottom: 2px solid #000;
 }
 
 .work2-part .elem{
@@ -218,8 +162,8 @@ html, body{
 }
 
 .work2-part .elem:nth-child(1){
-    padding-right: 40px;
     border-right: 2px solid #000;
+    padding-right: 40px;
 }
 
 .work2-part .elem:nth-child(2){
