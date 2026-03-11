@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table{
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 140px;
+        }
+
+        #border{
+            border: 2.5px solid #000;
+            border-radius: 5px;
+            background: linear-gradient(rgb(255, 188, 62), rgb(255, 67, 67));
+        }
+
+        tr th, tr td{
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="table">
+        <table id="border" cellspacing="9" cellpadding="13">
+            <tr align="center">
+                <th></th>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Species</th>
+            </tr>
+            <tr>
+                <td>Response</td>
+                <td>Rohith</td>
+                <td>Bengaluru</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Human</td>
+                            <td>Animal</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>Hero</td>
+                            <td>Superman</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
