@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(120deg,#5f9cff,#6edcc4);
+    padding:20px;
+}
+
+/* Form card */
+
+.container{
+    width:430px;
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* Title */
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+    letter-spacing:1px;
+}
+
+/* Labels */
+
+label{
+    display:block;
+    margin-top:14px;
+    font-weight:600;
+    font-size:14px;
+    color:#444;
+}
+
+/* Inputs */
+
+input{
+    width:100%;
+    margin-top:6px;
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid #d3d3d3;
+    font-size:14px;
+    background:#f8f9fb;
+    transition:0.25s;
+}
+
+/* Focus effect */
+
+input:focus{
+    outline:none;
+    border-color:#5f9cff;
+    background:white;
+    box-shadow:0 0 6px rgba(95,156,255,0.4);
+}
+
+/* Disabled & readonly fields */
+
+input[readonly]{
+    background:#eef2ff;
+}
+
+input:disabled{
+    background:#f0f0f0;
+    color:#777;
+}
+
+/* File input */
+
+input[type="file"]{
+    background:white;
+    padding:6px;
+}
+
+/* Divider */
+
+hr{
+    margin:22px 0;
+    border:none;
+    height:2px;
+    background:linear-gradient(to right,#ff6a6a,#ffb86b);
+    border-radius:2px;
+}
+
+/* Buttons container */
+
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+}
+
+/* Submit buttons */
+
+input[type="submit"]{
+    flex:1;
+    padding:11px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(135deg,#5f9cff,#4f7cff);
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* Hover effect */
+
+input[type="submit"]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Form</h2>
+
+<form action="lists_unordered.html" method="post">
+
+<label>Name</label>
+<input type="text" name="name" value="Shannu" maxlength="10" size="10" required>
+
+<label>College Name</label>
+<input type="text" name="college" value="PES" readonly>
+
+<label>University Name</label>
+<input type="text" name="university" value="PESU" disabled>
+
+<label>Phone No</label>
+<input type="number" name="number">
+
+<label>Course Offered</label>
+<input type="number" name="quantity" min="1" max="5">
+
+<label>Email</label>
+<input type="email" name="mail">
+
+<label>Country Code</label>
+<input type="text" name="Country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+<label>Upload Files</label>
+<input type="file" name="img" multiple>
+
+<hr>
+
+<label>Film Name</label>
+<input type="text" name="film" value="Toxic" placeholder="E.g. King Kong" autocomplete="on" required autofocus>
+
+<div class="buttons">
+<input type="submit" formaction="task1.html" value="Submit">
+<input type="submit" value="Submit">
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

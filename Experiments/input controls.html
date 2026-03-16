@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forms / Input Controls</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(120deg,#667eea,#764ba2);
+}
+
+/* Card container */
+
+.container{
+    background:#ffffff;
+    padding:35px;
+    width:340px;
+    border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+    letter-spacing:1px;
+}
+
+/* Divider */
+
+hr{
+    margin:18px 0;
+    border:none;
+    height:1px;
+    background:#e3e3e3;
+}
+
+/* Checkbox labels */
+
+label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:12px 0;
+    font-size:15px;
+    color:#444;
+    cursor:pointer;
+}
+
+/* Checkbox style */
+
+input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:#667eea;
+}
+
+/* Dropdown */
+
+select{
+    width:100%;
+    padding:9px;
+    border-radius:7px;
+    border:1px solid #ccc;
+    font-size:14px;
+    background:#f9f9f9;
+    transition:0.25s;
+}
+
+select:focus{
+    outline:none;
+    border-color:#667eea;
+    background:white;
+}
+
+/* Submit button */
+
+input[type="submit"]{
+    width:100%;
+    padding:11px;
+    margin-top:10px;
+    border:none;
+    border-radius:7px;
+    background:#667eea;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+input[type="submit"]:hover{
+    background:#5563d6;
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Grocery Checklist</h2>
+<hr>
+
+<form action="forms info.html" method="post">
+
+<label>
+<input type="checkbox" name="groceries" value="milk" checked> Milk
+</label>
+
+<label>
+<input type="checkbox" name="groceries" value="bread"> Bread
+</label>
+
+<label>
+<input type="checkbox" name="groceries" value="eggs"> Eggs
+</label>
+
+<hr>
+
+<p>
+<select name="groceries">
+<option>Choose an Option</option>
+<option>Butter</option>
+<option>Cheese</option>
+<option>Paneer</option>
+</select>
+</p>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+</body>
+</html>

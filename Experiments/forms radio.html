@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Category</title>
+</head>
+
+<body>
+
+<button id="styleBtn" onclick="toggleStyle()">Apply Styles</button>
+
+<div class="container">
+<h3>Age Category</h3>
+
+<form action="input controls.html" method="post">
+<p>
+<input type="radio" name="age" value="under20" checked> 0 - 19
+<input type="radio" name="age" value="20-35"> 20 - 35
+<input type="radio" name="age" value="36-50"> 36 - 50
+<input type="radio" name="age" value="over50"> Over 50
+</p>
+
+<input type="submit" value="Submit">
+</form>
+
+</div>
+
+<script>
+
+let styleApplied = false;
+let styleElement = null;
+
+function toggleStyle(){
+
+const button = document.getElementById("styleBtn");
+
+if(!styleApplied){
+
+const css = `
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background:white;
+    padding:30px 40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+h3{
+    margin-bottom:20px;
+    color:#333;
+}
+
+p{
+    margin:15px 0;
+}
+
+input[type="radio"]{
+    margin-right:6px;
+    transform:scale(1.2);
+}
+
+input[type="submit"]{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    background:#4CAF50;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background:#43a047;
+}
+`;
+
+styleElement = document.createElement("style");
+styleElement.innerHTML = css;
+document.head.appendChild(styleElement);
+
+button.textContent = "Remove Styles";
+styleApplied = true;
+
+}else{
+
+styleElement.remove();
+button.textContent = "Apply Styles";
+styleApplied = false;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
