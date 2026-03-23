@@ -3,25 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fixed Layout</title>
     <style>
-        body{
+        body {
             margin: 0;
-            text-align: center;
+            /* Using standard serif fallback for clarity */
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background: linear-gradient(to right, #0B3C5D, #4FD1FF);
+            background: linear-gradient(to right, #0b3c5d, #4fd1ff);
+            color: white;
+            padding: 20px;
+            line-height: 1.6;
         }
 
-        .box{
-            
+        .container {
+            text-align: justify;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        img {
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            height: 80vh;
+            width: 60%; /* Adjusted width to allow text space */
+            object-fit: cover;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <p>
-        <img src="anime-waterfall-scene.jpg" alt="pic" style="float: left; margin-left: 0.35in;
-        margin-bottom: 0.35 in; height: 80vh; width: 70%; display: flex; padding-right: 30px;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nulla doloremque placeat. Delectus, aut, voluptatibus veritatis ullam ipsam eos rem voluptas optio itaque maiores error quasi, labore molestias doloremque possimus.
-    </p>
+    <div class="container">
+        <!-- Replaced placeholder with a reliable image source -->
+        <img src="anime-waterfall-scene.jpg" alt="Nature Scene" onerror="this.src='https://via.placeholder.com/600x800?text=Nature+Scene'">
+        
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nulla doloremque placeat. Delectus, aut, voluptatibus veritatis ullam ipsam eos rem voluptas optio itaque maiores error quasi, labore molestias doloremque possimus. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Ipsum, quasi? Ipsam, quasi? Quisquam, quos. Ipsum, quasi? Ipsam, quasi?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nulla doloremque placeat. Delectus, aut, voluptatibus veritatis ullam ipsam eos rem voluptas optio itaque maiores error quasi, labore molestias doloremque possimus.
+        </p>
+        
+        <!-- Clearfix to ensure background extends if text is short -->
+        <div style="clear: both;"></div>
+    </div>
 </body>
 </html>
