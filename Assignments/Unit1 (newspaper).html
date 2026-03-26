@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Daily Times</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="Unit1 (newspaper).css">
+  <style>
+
+    /* BLACK INFO BAR */
+    .info-bar {
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2px 8px;
+    }
+    .info-bar span {
+      color: #bbb;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+    .info-bar .center-tag {
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    /* HEADLINE */
+    .main-headline {
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #111;
+      padding: 6px 10px 5px;
+      border-top: 2px solid #111;
+      border-bottom: 2px solid #111;
+      margin-top: 4px;
+    }
+
+    /* CONTENT AREA */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 130px;
+      padding: 6px 8px 8px;
+    }
+
+    .col {
+      padding: 0 6px;
+      border-right: 1px solid #bbb;
+    }
+    .col:first-child { padding-left: 0; }
+
+    .col-byline {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #cc1111;
+      margin-bottom: 4px;
+    }
+
+    .col-text {
+      font-family: 'Merriweather', serif;
+      font-size: 0.75rem;
+      line-height: 1.65;
+      color: #222;
+      text-align: justify;
+    }
+    .col-text p + p { margin-top: 5px; }
+
+    /* RIGHT COLUMN */
+    .right-col {
+      padding-left: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .photo-box {
+      border: 1px solid #aaa;
+      width: 100%;
+      height: 115px;
+      overflow: hidden;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .coupon {
+      border: 1.5px dashed #999;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+    }
+    .coupon p {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 0.6rem;
+      color: #cc1111;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    .footer-line {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 0.44rem;
+      color: #888;
+      padding: 3px 8px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="newspaper">
+
+  <div class="masthead">
+    <h1>The Daily Times</h1>
+  </div>
+
+  <div class="info-bar">
+    <span>www.sdnewnews.com</span>
+    <span class="center-tag">LATESBREAKING and EXCLUSIVE</span>
+    <span>$2.00</span>
+  </div>
+
+  <div class="main-headline">Supreme Leader Vaibhav</div>
+
+  <div class="content">
+
+    <div class="col">
+      <p class="col-byline">Bow down to Your King</p>
+      <div class="col-text">
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever whatever blah. blah yah yah whatever whatever blah. blah blah yah yah. blah blah yah yah yah yah blah blah whatever.</p>
+        <p>Blah blah yah yah yah yah blah. blah. blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever whatever blah.</p>
+        <p>Blah blah yah yah yah yah</p>
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever whatever blah. blah blah.</p>
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever blah.</p>
+        <p>Blah blah yah yah yah yah</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <p class="col-byline">Once lived a warrior</p>
+      <div class="col-text">
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever whatever blah. blah blah yah yah. blah blah yah yah yah yah blah.</p>
+        <p>Blah blah yah yah yah yah blah blah. blah yah yah yah yah blah blah whatever whatever blah. blah yah yah. blah blah.</p>
+        <p>Blah blah yah yah yah yah</p>
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah yah yah yah yah blah blah whatever blah.</p>
+        <p>Blah blah yah yah yah yah blah blah whatever whatever blah. blah blah. blah yah yah yah.</p>
+        <p>Blah blah yah yah yah yah</p>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <div class="photo-box">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80"
+          alt="Reporter portrait"
+        />
+      </div>
+      <div class="coupon">
+        <p>- Coupon -</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-line">© Daily Times Publishing Co. — All rights reserved.</div>
+
+</div>
+
+</body>
+</html>
