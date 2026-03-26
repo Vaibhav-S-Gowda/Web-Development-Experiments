@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript variables</title>
+</head>
+<body>
+
+    <p id="Output">MBA</p>
+    <p id="result"></p>
+
+    <script>
+        let a = 20;
+        a = 30;
+        console.log("let a = ", a);
+
+        var b = 30;
+
+        document.writeln("The value of a = " + a + "<br><br>");
+        document.writeln("The value of b = " + b + "<br><br>");
+
+        document.getElementById("Output").innerHTML = "<b>var value a:</b> " + a;
+        document.getElementById("Output").innerHTML += "<br>MCA";
+
+        var res = "";
+        res += isNaN(123) + " : 123 <br>";
+        res += isNaN("123") + " : \"123\" <br>";
+        res += isNaN("abc") + " : \"abc\" <br>";
+        res += isNaN("10a") + " : \"10a\" <br>";
+        res += isNaN("") + " : empty string <br>";
+
+        document.writeln(res);
+        document.writeln(typeof(res));
+
+        let bool = true;
+        let undef;
+        let n = null;
+        let f = 20.5;
+
+        let num = 4.7;
+        let floorval = Math.floor(num);
+        let ceilVal = Math.ceil(num);
+        let roundval = Math.round(num);
+
+        let maxVal = Math.max(10, 20, 5);
+        let minVal = Math.min(10, 20, 5);
+
+        let piVal = Math.PI;
+        let power = Math.pow(8, 2);
+        let sqrtVal = Math.sqrt(64);
+        let absVal = Math.abs(-4.7);
+
+        document.getElementById("result").innerHTML = "<b>Math functions executed</b>";
+    </script>
+
+</body>
+</html>
