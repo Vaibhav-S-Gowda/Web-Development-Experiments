@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Daily Times</title>
+
+  <!-- EXTERNAL CSS: Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- EXTERNAL CSS: Stylesheet -->
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --ink: #1a1008;
+      --paper: #f5efe0;
+      --paper-dark: #e8dfc8;
+      --accent-red: rgb(178, 20, 20);
+      --accent-red-dark: rgba(140, 10, 10, 0.9);
+      --gold: hsl(43, 74%, 49%);
+      --gold-light: hsla(43, 74%, 65%, 0.4);
+      --rule: #2a1a08;
+      --col-gap: 1.2rem;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== BODY ===== */
+    body {
+      background-color: #c9b99a;
+      background-image: repeating-linear-gradient(
+        90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
+      );
+      font-family: 'IM Fell English', serif;
+      color: var(--ink);
+      padding: 2rem 1rem;
+    }
+
+    /* ===== NEWSPAPER WRAPPER ===== */
+    .newspaper {
+      background-color: var(--paper);
+      background-image: url("https://www.transparenttextures.com/patterns/old-paper.png");
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0;
+      box-shadow: 4px 4px 24px rgba(0,0,0,0.45), 0 0 0 1px #8b6f47;
+      border: 3px double var(--rule);
+      outline: 1px solid #8b6f47;
+      outline-offset: 4px;
+    }
+
+    /* ===== MASTHEAD ===== */
+    .masthead {
+      border-bottom: 4px double var(--rule);
+      padding: 0.6rem 1.5rem 0;
+      text-align: center;
+      background-color: var(--paper-dark);
+    }
+
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Lora', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: #5a3e28;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .masthead-title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: clamp(2.8rem, 8vw, 5.2rem);
+      line-height: 1;
+      color: var(--ink);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0;
+    }
+
+    .masthead-tagline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Lora', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #5a3e28;
+      margin-bottom: 0.5rem;
+    }
+    .masthead-tagline::before,
+    .masthead-tagline::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ===== BREAKING NEWS RIBBON ===== */
+    .breaking {
+      background-color: var(--accent-red);
+      color: #fff;
+      text-align: center;
+      padding: 0.28rem 1rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* ===== DATE BAR ===== */
+    .datebar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3rem 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      border-bottom: 3px double var(--rule);
+      background: var(--paper-dark);
+    }
+
+    /* ===== MAIN CONTENT GRID ===== */
+    .content {
+      padding: 0.8rem 1.2rem;
+    }
+
+    /* Decorative rule */
+    .ornamental-rule {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.5em;
+      margin: 0.5rem 0;
+    }
+
+    /* ===== TOP HEADLINE SECTION ===== */
+    .top-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 3px double var(--rule);
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .top-story-left {
+      padding-right: var(--col-gap);
+      border-right: 1px solid var(--rule);
+    }
+
+    .top-story-right {
+      padding-left: var(--col-gap);
+    }
+
+    /* ===== HEADLINE STYLING ===== */
+    .headline-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 0.4rem;
+    }
+
+    .headline-sub {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #4a3020;
+      margin-bottom: 0.5rem;
+    }
+
+    .byline {
+      font-family: 'Lora', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-red);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .byline::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--accent-red);
+      opacity: 0.4;
+    }
+
+    /* ===== BODY TEXT ===== */
+    .body-text {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.82rem;
+      line-height: 1.65;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .body-text p + p {
+      text-indent: 1.2em;
+    }
+
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', serif;
+      float: left;
+      font-size: 3.5em;
+      line-height: 0.8;
+      margin: 0.05em 0.1em 0 0;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    /* ===== HERO IMAGE ===== */
+    .hero-image-wrap {
+      margin: 0.6rem 0;
+      border: 1px solid #8b6f47;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(40%) contrast(1.1);
+      float: none; /* for inline-style demo */
+    }
+
+    .img-caption {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.58rem;
+      text-align: center;
+      padding: 0.25rem;
+      background: var(--paper-dark);
+      border-top: 1px solid #8b6f47;
+    }
+
+    /* FLOAT EXAMPLE (inline CSS demo via style attr) */
+    .float-right-img {
+      float: right;
+      width: 42%;
+      margin: 0 0 0.5rem 0.8rem;
+      border: 1px solid #8b6f47;
+    }
+    .float-right-img img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(50%) contrast(1.15);
+    }
+
+    /* ===== COLUMNS SECTION ===== */
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-bottom: 3px double var(--rule);
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .col-article {
+      padding: 0 var(--col-gap);
+      border-right: 1px solid #8b6f47;
+    }
+    .col-article:first-child { padding-left: 0; }
+    .col-article:last-child  { padding-right: 0; border-right: none; }
+
+    .section-label {
+      font-family: 'Lora', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--ink);
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .col-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    /* ===== ADVERTISEMENT / COUPON ===== */
+    .ad-box {
+      border: 2px solid var(--gold);
+      background: linear-gradient(135deg, #fdf6e3 60%, hsla(43,74%,90%,0.5));
+      text-align: center;
+      padding: 0.8rem;
+      margin-top: 0.6rem;
+    }
+    .ad-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-red);
+    }
+    .ad-body { font-size: 0.72rem; margin: 0.2rem 0; font-style: italic; }
+    .coupon {
+      display: inline-block;
+      margin-top: 0.4rem;
+      border: 1px dashed var(--gold);
+      padding: 0.2rem 0.8rem;
+      font-family: 'Lora', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-red);
+      font-weight: 600;
+    }
+
+    /* ===== BOTTOM ROW ===== */
+    .bottom-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+
+    .bottom-left {
+      padding-right: var(--col-gap);
+      border-right: 1px solid #8b6f47;
+    }
+    .bottom-right { padding-left: var(--col-gap); }
+
+    /* ===== LINKS ===== */
+    a { color: var(--accent-red); text-decoration: none; font-style: italic; }
+    a:hover { color: var(--gold); text-decoration: underline; }
+    a:visited { color: hsl(280, 30%, 35%); }
+    a:active { color: var(--accent-red-dark); }
+
+    /* ===== PSEUDO CLASS: INPUT ===== */
+    .search-bar {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+      align-items: center;
+    }
+    .search-bar input[type="text"] {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.75rem;
+      border: 1px solid #8b6f47;
+      background: var(--paper);
+      padding: 0.3rem 0.6rem;
+      color: var(--ink);
+      flex: 1;
+      outline: none;
+    }
+    .search-bar input[type="text"]:focus {
+      border-color: var(--accent-red);
+      background: #fffdf5;
+      box-shadow: 0 0 0 2px var(--gold-light);
+    }
+    .search-bar input[type="text"]:hover { border-color: var(--ink); }
+    .search-bar button {
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      padding: 0.3rem 0.7rem;
+      font-family: 'Lora', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .search-bar button:hover { background: var(--accent-red); }
+
+    /* ===== SIDEBAR ITEMS ===== */
+    .sidebar-item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #c9b99a;
+    }
+    .sidebar-item:last-child { border-bottom: none; }
+    .sidebar-item-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 0.2rem;
+    }
+    .sidebar-item-text {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: #3a2a18;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 4px double var(--rule);
+      background: var(--paper-dark);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Lora', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      color: #5a3e28;
+    }
+
+    /* ===== PSEUDO CLASS on p (precedence demo) ===== */
+    /* Inline > Document > External — demonstrated via style attr below */
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .top-story, .three-col, .bottom-row {
+        grid-template-columns: 1fr;
+      }
+      .top-story-left, .col-article, .bottom-left {
+        border-right: none;
+        border-bottom: 1px solid #8b6f47;
+        padding: 0 0 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+      .top-story-right, .col-article, .bottom-right {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<article class="newspaper">
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span>ESTABLISHED 1842</span>
+      <span>VOL. CLXXXIV &nbsp;·&nbsp; No. 63,491</span>
+      <span>THURSDAY, MARCH 26, 2026</span>
+    </div>
+
+    <!-- DOCUMENT style (inline on element) for title colour precedence demo -->
+    <h1 class="masthead-title">The Daily Times</h1>
+
+    <p class="masthead-tagline">All The News That's Fit To Print</p>
+  </header>
+
+  <!-- ===== BREAKING / RIBBON ===== -->
+  <!-- INLINE STYLE — demonstrates highest precedence over external & document -->
+  <div class="breaking" style="letter-spacing: 0.3em;">
+    ★ LATEST &amp; EXCLUSIVE ★ &nbsp; BREAKING &nbsp; ★ LATEST &amp; EXCLUSIVE ★
+  </div>
+
+  <!-- ===== DATE / EDITION BAR ===== -->
+  <div class="datebar">
+    <span>PRICE: TWO PENCE</span>
+    <span>BENGALURU MORNING EDITION</span>
+    <span>WEATHER: PARTLY CLOUDY, 28°C</span>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="content">
+
+    <!-- Search bar (pseudo class :focus, :hover demo) -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search the archives…" id="search"/>
+      <button type="button">Search</button>
+    </div>
+
+    <div class="ornamental-rule">— ✦ —</div>
+
+    <!-- ===== TOP STORY (2-col) ===== -->
+    <section class="top-story">
+
+      <div class="top-story-left">
+        <p class="byline">By Our Chief Correspondent</p>
+        <!-- INLINE style on headline — precedence over document & external -->
+        <h2 class="headline-main" style="font-size: 2rem; color: #1a1008;">
+          PLACE YOUR HEADLINE HERE
+        </h2>
+        <p class="headline-sub">A remarkable turn of events shakes the foundations of the established order across three continents</p>
+
+        <div class="hero-image-wrap">
+          <!-- Float property with absolute URL (online) -->
+          <img
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80"
+            alt="City skyline"
+          />
+          <p class="img-caption">Fig. 1 — The city as dawn breaks over the horizon. (Photo: Unsplash)</p>
+        </div>
+
+        <div class="body-text">
+          <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+          <p>Read more at <a href="https://www.bbc.com/news" target="_blank">The Daily Times Online</a> for complete coverage and live updates throughout the day.</p>
+        </div>
+      </div>
+
+      <div class="top-story-right">
+        <p class="byline">Special Report</p>
+        <h2 class="headline-main">SECOND LEAD STORY BREAKS OVERNIGHT</h2>
+        <p class="headline-sub">Sources within the government confirm the extraordinary developments</p>
+
+        <!-- Float right image (absolute URL) -->
+        <div class="float-right-img">
+          <img
+            src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=600&q=80"
+            alt="Press printing"
+            style="filter: sepia(60%) contrast(1.2);"
+          />
+        </div>
+
+        <div class="body-text">
+          <p class="drop-cap">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+          <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.</p>
+          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora.</p>
+        </div>
+      </div>
+
+    </section><!-- /top-story -->
+
+    <!-- ===== THREE COLUMN SECTION ===== -->
+    <section class="three-col">
+
+      <div class="col-article">
+        <span class="section-label">Politics</span>
+        <h3 class="col-headline">Parliament Convenes For Emergency Session</h3>
+        <div class="body-text">
+          <p>Ut labore et dolore magnam aliquam quaerat voluptatem enim ad minima veniam quis nostrum exercitationem ullam corporis.</p>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+        </div>
+      </div>
+
+      <div class="col-article">
+        <span class="section-label">Commerce</span>
+        <h3 class="col-headline">Markets Surge On Positive Quarterly Reports</h3>
+        <div class="body-text">
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+          <p>Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
+        </div>
+
+        <!-- Coupon / Ad inside column -->
+        <div class="ad-box">
+          <p class="ad-title">Wanted!</p>
+          <p class="ad-body">First-rate reporters &amp; correspondents. Apply within.</p>
+          <span class="coupon">✂ — CLIP &amp; PRESENT — ✂</span>
+        </div>
+      </div>
+
+      <div class="col-article">
+        <span class="section-label">Science</span>
+        <h3 class="col-headline">New Discovery Rewrites Textbooks Worldwide</h3>
+        <div class="body-text">
+          <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae.</p>
+          <p>Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id placeat facere possimus.</p>
+          <p><a href="#">Continue reading on page 4 »</a></p>
+        </div>
+      </div>
+
+    </section><!-- /three-col -->
+
+    <!-- ===== BOTTOM ROW ===== -->
+    <section class="bottom-row">
+
+      <div class="bottom-left">
+        <p class="byline">Sports Desk</p>
+        <h3 class="col-headline" style="font-size:1.3rem;">CHAMPIONSHIP FINAL ENDS IN DRAMATIC FASHION</h3>
+
+        <!-- Float image (absolute URL, online) -->
+        <img
+          src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=700&q=80"
+          alt="Stadium"
+          style="float:left; width:45%; margin:0 0.8rem 0.5rem 0; border:1px solid #8b6f47; filter:sepia(30%) contrast(1.1);"
+        />
+
+        <div class="body-text">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+
+      <div class="bottom-right">
+        <span class="section-label">In Brief</span>
+        <div class="sidebar-item">
+          <p class="sidebar-item-title">Weather Forecast</p>
+          <p class="sidebar-item-text">Scattered showers expected by evening. High of 29°C, low of 21°C overnight. Humidity at 74%.</p>
+        </div>
+        <div class="sidebar-item">
+          <p class="sidebar-item-title">Stock Exchange</p>
+          <p class="sidebar-item-text">SENSEX ▲ 412 pts · NIFTY ▲ 138 pts · Gold ₹7,210/g</p>
+        </div>
+        <div class="sidebar-item">
+          <p class="sidebar-item-title">Obituaries</p>
+          <p class="sidebar-item-text">Sir Reginald Fotheringay-Browne, celebrated cartographer and Fellow of the Royal Society, passed Thursday last at age 91.</p>
+        </div>
+        <div class="sidebar-item">
+          <p class="sidebar-item-title">Letters to the Editor</p>
+          <p class="sidebar-item-text">Correspondence may be directed to: <a href="mailto:letters@thedailytimes.com">letters@thedailytimes.com</a></p>
+        </div>
+      </div>
+
+    </section><!-- /bottom-row -->
+
+  </main><!-- /content -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <span>© 1842–2026 THE DAILY TIMES &nbsp;·&nbsp; ALL RIGHTS RESERVED</span>
+    <span>PRINTED &amp; PUBLISHED BY THE DAILY TIMES PRESS, BENGALURU</span>
+    <span>REGISTERED NEWSPAPER</span>
+  </footer>
+
+</article>
+
+</body>
+</html>
