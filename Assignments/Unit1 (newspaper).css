@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+.newspaper {
+  min-height: 80vh;   /* FULL screen height */
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-line {
+  margin-top: auto;
+}
+
+    body {
+      background: #d0d0d0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 10px;
+      font-size: 50px;
+      font-family: 'Merriweather', serif;
+    }
+
+    .newspaper {
+      background: #fff;
+      width: 90%;        /* responsive */
+      max-width: 1000px; /* controls max size */
+      border: 2px solid #333;
+      box-shadow: 3px 3px 12px rgba(0,0,0,0.4);
+    }
+
+    /* RED MASTHEAD */
+    .masthead {
+      background-color: #cc1111;
+      padding: 5px 10px 4px;
+      text-align: center;
+    }
+    .masthead h1 {
+      font-family: 'Oswald', sans-serif;
+      color: #fff;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
