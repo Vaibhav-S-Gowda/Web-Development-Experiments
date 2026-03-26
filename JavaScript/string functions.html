@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <title>String Functions</title>
+<body>
+  <p id="output"></p>
+  <script>
+    let str="Hello World";
+    let length=str.length;
+    let index=str.indexOf("o");
+    let lastindex=str.lastIndexOf("o");
+    let char=str.charAt(4);
+    let substring=str.substring(0,5);
+    let slice=str.slice(0,5);
+    let replace=str.replace("World","JavaScript");
+    let uppercase=str.toUpperCase();
+    let lowercase=str.toLowerCase();
+    let concat=str.concat(" Welcome to JavaScript");
+    let trim="   Hello World   ".trim();
+
+    document.getElementById("output").innerHTML=("<b>String:</b> "+str+"<br><br>"+
+    "<b>Length:</b> "+length+"<br><br>"+
+    "<b>Index of 'o':</b> "+index+"<br><br>"+
+    "<b>Last index of 'o':</b> "+lastindex+"<br><br>"+
+    "<b>Character at index 4:</b> "+char+"<br><br>"+
+    "<b>Substring (0,5):</b> "+substring+"<br><br>"+
+    "<b>Slice (0,5):</b> "+slice+"<br><br>"+
+    "<b>Replace 'World' with 'JavaScript':</b> "+replace+"<br><br>"+
+    "<b>Uppercase:</b> "+uppercase+"<br><br>"+
+    "<b>Lowercase:</b> "+lowercase+"<br><br>"+
+    "<b>Concatenation:</b> "+concat+"<br><br>"+
+    "<b>Trimmed string:</b> '"+trim+"'"+ "<br><br>");
+  </script>
+</html>
