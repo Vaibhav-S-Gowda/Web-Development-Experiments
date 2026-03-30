@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations - Web Application Framework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef;
+            padding: 20px;
+        }
+        h2 {
+            color: #003366;
+        }
+        .output {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 60%;
+            margin-top: 15px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Array Operations Using Switch (Web Application Framework)</h2>
+
+<button onclick="performOperation()">Run Array Operations</button>
+
+<div class="output" id="result"></div>
+
+<script>
+function performOperation() {
+    let arr = [10, "Apple", true];   // mixed array
+    let result = "<h3>Initial Mixed Array:</h3>" + JSON.stringify(arr) + "<br><br>";
+
+    let choice = parseInt(prompt(
+        "Choose Operation:\n1. Dynamically Insert New Value\n2. Create Array Using Object\n3. Length Operation"
+    ));
+
+    switch(choice) {
+        case 1:
+            let newValue = prompt("Enter any value to insert:");
+            arr.push(newValue);
+            result += "<h3>After Insertion:</h3>" + JSON.stringify(arr);
+            break;
+
+        case 2:
+            let objArray = new Array("Red", 25, false, 89.5);
+            result += "<h3>Array Created using Object:</h3>" + JSON.stringify(objArray);
+            break;
+
+        case 3:
+            result += "<h3>Array Length:</h3>" + arr.length;
+            break;
+
+        default:
+            result += "<h3>Invalid Choice</h3>";
+    }
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+<hr>
+
+<h2>Two Dimensional Array Output</h2>
+
+<button onclick="show2D()">Display 2D Array</button>
+<div class="output" id="result2"></div>
+
+<script>
+function show2D() {
+    let arr2D = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+
+    let text = "<h3>2D Array Contents:</h3>";
+    for (let i = 0; i < arr2D.length; i++) {
+        text += arr2D[i].join("  ") + "<br>";
+    }
+
+    document.getElementById("result2").innerHTML = text;
+}
+</script>
+</body>
+</html>
+
