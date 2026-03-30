@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>SRN Validation</title> 
+ 
+<script> 
+function validateSRN() { 
+    let srn = document.getElementById("srn").value; 
+ 
+    // Regular Expression for SRN 
+    let pattern = /^[A-Z]{3}[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/; 
+ 
+    if (srn === "") { 
+        alert("SRN cannot be empty"); 
+        return false; 
+    } 
+ 
+    if (srn.includes(" ")) { 
+        alert("No spaces allowed in SRN"); 
+        return false; 
+    } 
+ 
+    if (!pattern.test(srn)) { 
+        alert("Invalid SRN format!\nExample: PES1PG25CA136"); 
+        return false;  
+    } 
+ 
+    alert("Valid SRN ✔"); 
+    return true; 
+} 
+</script> 
+</head> 
+<body> 
+<h2>Enter SRN</h2> 
+<form onsubmit="return validateSRN()"> 
+    SRN: <input type="text" id="srn"><br><br> 
+    <input type="submit" value="Submit"> 
+</form> 
+ 
+</body> 
+</html>
+
