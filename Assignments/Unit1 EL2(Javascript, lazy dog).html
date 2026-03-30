@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>JS Question 2</title>  
+</head>  
+<body>  
+<h2>Question 2 Programs</h2>  
+<button onclick="checkNaN()">isNaN Test</button>  
+<button onclick="decimalToOctal()">Decimal → Octal</button>  
+<button onclick="stringOps()">String Operations</button>  
+<script>  
+// isNaN  
+function checkNaN(){  
+alert(  
+isNaN(10) + "\n" +  
+isNaN("abc") + "\n" +  
+isNaN(true) + "\n" +  
+isNaN(undefined) + "\n" +  
+isNaN(null)  
+);  
+}  
+// decimal to octal  
+function decimalToOctal(){  
+let n = prompt("Enter decimal number");  
+alert("Octal = " + parseInt(n).toString(8));   
+}  
+// string operations  
+function stringOps(){  
+let str = "The quick brown fox jumps over the lazy dog";  
+alert(  
+"Length = " + str.length + "\n" +  
+"charAt(5) = " + str.charAt(5) + "\n" +  
+"indexOf('fox') = " + str.indexOf("fox") + "\n" +  
+"lastIndexOf('o') = " + str.lastIndexOf("o") + "\n" +  
+"search('lazy') = " + str.search("lazy") + "\n" +  
+"replace = " + str.replace("dog","cat") + "\n" +  
+"substring = " + str.substring(4,9) + "\n" +  
+"slice = " + str.slice(10,15) + "\n" +  
+"upper = " + str.toUpperCase()  
+);  
+}  
+</script>  
+</body>  
+</html>
