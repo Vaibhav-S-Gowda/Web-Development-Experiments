@@ -9,6 +9,8 @@
     <h2>The OnKey Event</h2>
     <input type="text" onkeydown="myFunction()">
     <p id="demo"></p>
+    Enter your name:
+    <input type="text" id="fname" onkeyup="myFunction1()">
     <script>
         function myFunction() {
             document.getElementById('demo').innerHTML = "You pressed a key inside the input field";
@@ -16,6 +18,11 @@
 
         function load_body() {
             alert("Welcome!!!\n\n" + "This is the class of MCA 2nd Semester. \n\n" + "We are studying Web Application Frameworks-I\n");
+        }
+
+        function myFunction1() {
+            let x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
         }
     </script>
 </body>
