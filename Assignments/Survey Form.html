@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey Form</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #4facfe;
+    }
+
+    .options {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #4facfe;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #007bff;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+
+    .success {
+        text-align: center;
+        color: green;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Survey Form</h2>
+
+    <form id="surveyForm">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name">
+            <div class="error" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email">
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" id="age">
+            <div class="error" id="ageError"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="options">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+            <div class="error" id="genderError"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Rate our service</label>
+            <select id="rating">
+                <option value="">Select</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Poor</option>
+            </select>
+            <div class="error" id="ratingError"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Features you like</label>
+            <div class="options">
+                <label><input type="checkbox" value="UI"> UI</label>
+                <label><input type="checkbox" value="Speed"> Speed</label>
+                <label><input type="checkbox" value="Support"> Support</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Feedback</label>
+            <textarea id="feedback"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+
+        <div class="success" id="successMsg"></div>
+    </form>
+</div>
+
+<script>
+document.getElementById("surveyForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".error").forEach(el => el.innerText = "");
+    document.getElementById("successMsg").innerText = "";
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let rating = document.getElementById("rating").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    // Name validation
+    if (name === "") {
+        document.getElementById("nameError").innerText = "Name is required";
+        valid = false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerText = "Enter valid email";
+        valid = false;
+    }
+
+    // Age validation
+    if (age === "" || age <= 0) {
+        document.getElementById("ageError").innerText = "Enter valid age";
+        valid = false;
+    }
+
+    // Gender validation
+    if (!gender) {
+        document.getElementById("genderError").innerText = "Select gender";
+        valid = false;
+    }
+
+    // Rating validation
+    if (rating === "") {
+        document.getElementById("ratingError").innerText = "Select rating";
+        valid = false;
+    }
+
+    if (valid) {
+        document.getElementById("successMsg").innerText = "Form submitted successfully!";
+        document.getElementById("surveyForm").reset();
+    }
+});
+</script>
+
+</body>
+</html>
