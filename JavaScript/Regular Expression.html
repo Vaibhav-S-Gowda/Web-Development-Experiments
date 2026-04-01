@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <script>
+        function runRegex() {
+            let str  = document.getElementById("inputText").value;
+
+            // 1. Match "cat"
+            let matchCat = str.match(/cat/);
+
+            // 2. Extract all digits
+            let digits = str.match(/\d+/g);
+
+            // 3. Check if starts with Hello
+            let startsHello = /^Hello/.test(str);
+
+            // 4. Extract all words
+            let words = str.match(/[a-zA-Z]+/g);
+
+            // 5. Match whitespaces
+            let spaces = str.match(/\s/g);
+
+            // Display Results
+            let result = "";
+            result += "1. Match 'cat': " + (matchCat ? matchCat : "Not Found") + "<br><br>";
+            result += "2. Digits: " + (digits ? digits : "None") + "<br><br>";
+            result += "3. Starts with 'Hello': " + startsHello + "<br><br>";
+            result += "4. Words: " + (words ? words : "None") + "<br><br>";
+            result += "5. Whitespaces: " + (spaces ? spaces.length : 0);
+        }
+    </script>
+    
+</body>
+</html>
