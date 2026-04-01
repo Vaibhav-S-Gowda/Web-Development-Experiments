@@ -10,7 +10,10 @@ function chkPasswords() {
 
     if (init.value != sec.value) {
         alert("Please enter the correct password");
-        init.focus();
+        sec.focus();
         return false;
+    }
+    else {
+        alert("Correct password!");
     }
 }
