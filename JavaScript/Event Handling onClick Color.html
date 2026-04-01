@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background colour change</title>
+</head>
+<body>
+    
+    <form action="post">
+        <input type="button" name="Button1" value="RED" onclick="changeColor('red')">
+        <input type="button" name="Button2" value="ORANGE" onclick="changeColor('orange')">
+        <input type="button" name="Button3" value="YELLOW" onclick="changeColor('yellow')">
+        <input type="button" name="Button4" value="BLUE" onclick="changeColor('blue')">
+        <input type="button" name="Button5" value="GREEN" onclick="changeColor('green')">
+    </form>
+    <script>
+        function changeColor(code) {
+            document.bgColor=code;
+        }
+    </script>
+</body>
+</html>
