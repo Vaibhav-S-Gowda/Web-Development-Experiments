@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<!-- Illustrates nested absolute positioning of elements -->
+
+<html>
+<head> 
+	<title> Nested Absolute Positioning</title>
+
+	<style type = "text/css">
+	
+	.regtext {font-family: Times; font-size: 14pt; width: 400px;
+		  position: absolute; top: 100px;left: 100px;}
+	
+	.abstext {position: absolute; top: 25px; left: 50px;
+		  font-family: Times; font-size: 24pt; 
+		  font-style: italic; letter-spacing: lem; 
+		  color: rgb(255,106,102); width: 600px}
+	</style>
+</head>
+
+<body>
+	<div class = "regtext">
+	Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple Apple 
+
+		<span class = "abstext">
+			Apples are good for you
+		</span>
+	</div>
+</body>
+</html>
