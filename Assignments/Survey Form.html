@@ -2,213 +2,111 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Survey Form</title>
-
+<title>Dynamic Survey Form</title>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
     body {
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
-        min-height: 100vh;
+        font-family: Arial, sans-serif;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        background: #f5f5f5;
     }
 
     .container {
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        width: 100%;
-        max-width: 500px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 45%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .form-group {
         margin-bottom: 15px;
     }
 
     label {
         display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    input, select, textarea {
-        width: 100%;
-        padding: 10px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        outline: none;
-    }
-
-    input:focus, select:focus, textarea:focus {
-        border-color: #4facfe;
-    }
-
-    .options {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 6px;
-        background: #4facfe;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: #007bff;
-    }
-
-    .error {
-        color: red;
-        font-size: 12px;
-    }
-
-    .success {
-        text-align: center;
-        color: green;
         margin-top: 10px;
+    }
+
+    .summary {
+        background: #222;
+        color: #fff;
+    }
+
+    .summary p {
+        margin: 8px 0;
     }
 </style>
 </head>
-
 <body>
 
 <div class="container">
     <h2>Survey Form</h2>
 
-    <form id="surveyForm">
+    <label>Name:
+        <input type="text" id="name" oninput="updateSummary()">
+    </label>
 
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" id="name">
-            <div class="error" id="nameError"></div>
-        </div>
+    <label>Age:
+        <input type="number" id="age" oninput="updateSummary()">
+    </label>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" id="email">
-            <div class="error" id="emailError"></div>
-        </div>
+    <label>Gender:</label>
+    <label><input type="radio" name="gender" value="Male" onchange="updateSummary()"> Male</label>
+    <label><input type="radio" name="gender" value="Female" onchange="updateSummary()"> Female</label>
 
-        <div class="form-group">
-            <label>Age</label>
-            <input type="number" id="age">
-            <div class="error" id="ageError"></div>
-        </div>
+    <label>Skills:</label>
+    <label><input type="checkbox" value="HTML" onchange="updateSummary()"> HTML</label>
+    <label><input type="checkbox" value="CSS" onchange="updateSummary()"> CSS</label>
+    <label><input type="checkbox" value="JavaScript" onchange="updateSummary()"> JavaScript</label>
 
-        <div class="form-group">
-            <label>Gender</label>
-            <div class="options">
-                <label><input type="radio" name="gender" value="Male"> Male</label>
-                <label><input type="radio" name="gender" value="Female"> Female</label>
-            </div>
-            <div class="error" id="genderError"></div>
-        </div>
+    <label>Country:
+        <select id="country" onchange="updateSummary()">
+            <option value="">Select</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+    </label>
+</div>
 
-        <div class="form-group">
-            <label>Rate our service</label>
-            <select id="rating">
-                <option value="">Select</option>
-                <option>Excellent</option>
-                <option>Good</option>
-                <option>Average</option>
-                <option>Poor</option>
-            </select>
-            <div class="error" id="ratingError"></div>
-        </div>
-
-        <div class="form-group">
-            <label>Features you like</label>
-            <div class="options">
-                <label><input type="checkbox" value="UI"> UI</label>
-                <label><input type="checkbox" value="Speed"> Speed</label>
-                <label><input type="checkbox" value="Support"> Support</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Feedback</label>
-            <textarea id="feedback"></textarea>
-        </div>
-
-        <button type="submit">Submit</button>
-
-        <div class="success" id="successMsg"></div>
-    </form>
+<div class="container summary">
+    <h2>Live Summary</h2>
+    <p><strong>Name:</strong> <span id="s_name">-</span></p>
+    <p><strong>Age:</strong> <span id="s_age">-</span></p>
+    <p><strong>Gender:</strong> <span id="s_gender">-</span></p>
+    <p><strong>Skills:</strong> <span id="s_skills">-</span></p>
+    <p><strong>Country:</strong> <span id="s_country">-</span></p>
 </div>
 
 <script>
-document.getElementById("surveyForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+function updateSummary() {
+    // Name
+    document.getElementById("s_name").innerText =
+        document.getElementById("name").value || "-";
 
-    let valid = true;
+    // Age
+    document.getElementById("s_age").innerText =
+        document.getElementById("age").value || "-";
 
-    // Clear previous errors
-    document.querySelectorAll(".error").forEach(el => el.innerText = "");
-    document.getElementById("successMsg").innerText = "";
-
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let age = document.getElementById("age").value.trim();
-    let rating = document.getElementById("rating").value;
+    // Gender
     let gender = document.querySelector('input[name="gender"]:checked');
+    document.getElementById("s_gender").innerText =
+        gender ? gender.value : "-";
 
-    // Name validation
-    if (name === "") {
-        document.getElementById("nameError").innerText = "Name is required";
-        valid = false;
-    }
+    // Skills
+    let skills = [];
+    document.querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(cb => skills.push(cb.value));
 
-    // Email validation
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        document.getElementById("emailError").innerText = "Enter valid email";
-        valid = false;
-    }
+    document.getElementById("s_skills").innerText =
+        skills.length ? skills.join(", ") : "-";
 
-    // Age validation
-    if (age === "" || age <= 0) {
-        document.getElementById("ageError").innerText = "Enter valid age";
-        valid = false;
-    }
-
-    // Gender validation
-    if (!gender) {
-        document.getElementById("genderError").innerText = "Select gender";
-        valid = false;
-    }
-
-    // Rating validation
-    if (rating === "") {
-        document.getElementById("ratingError").innerText = "Select rating";
-        valid = false;
-    }
-
-    if (valid) {
-        document.getElementById("successMsg").innerText = "Form submitted successfully!";
-        document.getElementById("surveyForm").reset();
-    }
-});
+    // Country
+    document.getElementById("s_country").innerText =
+        document.getElementById("country").value || "-";
+}
 </script>
 
 </body>
