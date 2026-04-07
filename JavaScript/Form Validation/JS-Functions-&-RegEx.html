@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Functions & RegEx Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Functions & Regular Expressions</h2>
+<p id="output"></p>
+
+<script>
+/*Functions
+1.  greet() → No parameter
+2.  square(num) → With parameter
+*/
+// ----------- FUNCTION WITHOUT PARAMETER -----------
+function greet() {
+    return "Hello! This is a function without parameters.<br>";
+}
+
+// ----------- FUNCTION WITH PARAMETER -----------
+function square(num) {
+    return "Square of " + num + " is: " + (num * num) + "<br>";
+}
+
+/*
+Regular Expressions
+3.  [0-9] → Digits
+4.  [a-zA-Z] → Alphabets
+5.  [a-z] → Lowercase
+6.  [A-Z] → Uppercase
+7.  \w → Word characters
+8.  \D → Non-digits
+9.  \s → Spaces
+10. \W → Non-word characters
+*/
+// ----------- REGULAR EXPRESSIONS -----------
+function regexDemo() {
+    let text = "Hello123 World_456";
+
+    let result = "<b>Original Text:</b> " + text + "<br><br>";
+
+    // Match digits
+    let digits = text.match(/[0-9]+/g);
+    result += "Digits [0-9]: " + digits + "<br>";
+
+    // Match alphabets
+    let alphabets = text.match(/[a-zA-Z]+/g);
+    result += "Alphabets [a-zA-Z]: " + alphabets + "<br>";
+
+    // Match lowercase letters
+    let lowercase = text.match(/[a-z]+/g);
+    result += "Lowercase [a-z]: " + lowercase + "<br>";
+
+    // Match uppercase letters
+    let uppercase = text.match(/[A-Z]+/g);
+    result += "Uppercase [A-Z]: " + uppercase + "<br>";
+
+    // Match word characters (letters, digits, underscore)
+    let wordChars = text.match(/\w+/g);
+    result += "Word Characters [\\w]: " + wordChars + "<br>";
+
+    // Match non-digits
+    let nonDigits = text.match(/\D+/g);
+    result += "Non-Digits [\\D]: " + nonDigits + "<br>";
+
+    // Match whitespace
+    let space = text.match(/\s/g);
+    result += "Whitespace [\\s]: " + space + "<br>";
+
+    // Match non-word characters
+    let nonWord = text.match(/\W+/g);
+    result += "Non-Word Characters [\\W]: " + nonWord + "<br>";
+
+    return result;
+}
+
+// ----------- OUTPUT DISPLAY -----------
+let output = "";
+output += greet();                 // function without parameter
+output += square(5);               // function with parameter
+output += "<br><b>Regular Expression Results:</b><br>";
+output += regexDemo();             // regex demo
+
+document.getElementById("output").innerHTML = output;
+/*Output
+Hello! This is a function without parameters.
+Square of 5 is: 25
+
+Regular Expression Results:
+Digits: 123,456
+Alphabets: Hello,World */
+
+</script>
+
+</body>
+</html>

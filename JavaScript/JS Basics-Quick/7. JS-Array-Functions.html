@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Full Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Array Complete Demonstration</h2>
+<!--
+1.  Basic: push(), pop(), shift(), unshift()
+2.  Advanced:
+    a.  slice() → extract portion
+    b.  join() → convert array to string with separator
+    c.  concat() → merge arrays
+    d.  toString() → convert to string
+    e.  sort() → sort elements
+3.  Loops: for, forEach
+4.  Multidimensional Array
+-->
+<p id="output"></p>
+
+<script>
+    let result = "";
+
+    // 1. Array Declaration
+    let fruits = ["Apple", "Banana", "Mango", "Orange"];
+    result += "Original Array: " + fruits + "<br>";
+
+    // 2. Loop through array (for loop)
+    result += "<br>Using for loop:<br>";
+    for (let i = 0; i < fruits.length; i++) {
+        result += fruits[i] + "<br>";
+    }
+
+    // 3. Basic Array Functions
+    fruits.push("Grapes");   
+    fruits.pop();            
+    fruits.unshift("Pineapple"); 
+    fruits.shift();          
+
+    result += "<br>After push/pop/shift/unshift: " + fruits + "<br>";
+
+    // 4. slice()
+    let sliced = fruits.slice(1, 3);
+    result += "<br>slice(1,3): " + sliced + "<br>";
+
+    // 5. join()
+    let joined = fruits.join(" - ");
+    result += "<br>join('-'): " + joined + "<br>";
+
+    // 6. concat()
+    let moreFruits = ["Kiwi", "Papaya"];
+    let combined = fruits.concat(moreFruits);
+    result += "<br>concat(): " + combined + "<br>";
+
+    // 7. toString()
+    let str = fruits.toString();
+    result += "<br>toString(): " + str + "<br>";
+
+    // 8. sort()
+    fruits.sort();
+    result += "<br>sort(): " + fruits + "<br>";
+
+    // 9. Multidimensional Array
+    let students = [
+        ["John", 85],
+        ["Alice", 90],
+        ["Bob", 78]
+    ];
+
+    result += "<br>Multidimensional Array:<br>";
+
+    // Loop through multidimensional array
+    for (let i = 0; i < students.length; i++) {
+        for (let j = 0; j < students[i].length; j++) {
+            result += students[i][j] + " ";
+        }
+        result += "<br>";
+    }
+
+    // 10. forEach()
+    result += "<br>Using forEach:<br>";
+    fruits.forEach(function(item) {
+        result += item + "<br>";
+    });
+
+    // Display output
+    document.getElementById("output").innerHTML = result;
+</script>
+
+</body>
+</html>

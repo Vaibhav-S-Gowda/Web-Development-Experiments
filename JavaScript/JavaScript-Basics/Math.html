@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 
+</head> 
+<body>
+<p>Math.sin(x) returns the sin of x (given in radians):</p>
+<p>Angle in radians = (angle in degrees) * PI / 180.</p>
+
+<p id="demo1"></p>
+
+<p>Math.cos(x) returns the cosine of x (given in radians):</p>
+<p>Angle in radians = (angle in degrees) * PI / 180.</p>
+
+<p id="demo2"></p>
+
+<p>Math.max() returns the highest value in a list of arguments.</p>
+
+<p id="demo3"></p>
+<p>Math.min() returns the lowest value in a list of arguments:</p>
+
+<p id="demo4"></p>
+
+<h2>JavaScript Math Constants</h2>
+
+<p id="demo5"></p> 
+<script>
+		    document.getElementById("demo1").innerHTML = 
+"The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+		 // returns 1 (the sine of 90 degrees)
+
+		 document.getElementById("demo2").innerHTML = 
+"The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
+
+document.getElementById("demo3").innerHTML =
+Math.max(0, 150, 30, 20, -8, -200);
+document.getElementById("demo4").innerHTML =
+Math.min(0, 150, 30, 20, -8, -200);
+
+document.getElementById("demo5").innerHTML = 
+"<p><b>Math.E:</b> " + Math.E + "</p>" +
+"<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+"<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+"<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+"<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+"<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+"<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+"<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+
+</script>
+	</script>
+	</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head><title>Array Functions</title></head>
+<body>
+<p id="demo"></p>
+
+<button onclick="myFunction1()">Find Length</button>
+<p id="demo1"></p>
+
+<button onclick="myFunction2()">Constructor</button>
+<p id="demo2">Click the button to create an array, then display its constructor.</p>
+
+
+<button onclick="myFunction3()">Concat</button>
+<p id="demo3"></p>
+
+<button onclick="myFunction4()">indexOf</button>
+<p id="demo4"></p>
+
+<button onclick="myFunction5()">isArray</button>
+<p id="demo5"></p>
+
+<button onclick="myFunction6()">join</button>
+<p id="demo6"></p>
+
+<button onclick="myFunction7()">pop</button>
+<p id="demo7"></p>
+
+<button onclick="myFunction8()">push</button>
+<p id="demo8"></p>
+
+<button onclick="myFunction9()">reverse</button>
+<p id="demo9"></p>
+
+<button onclick="myFunction10()">shift</button>
+<p id="demo10"></p>
+
+<button onclick="myFunction11()">unshift</button>
+<p id="demo11"></p>
+
+<button onclick="myFunction12()">sort</button>
+<p id="demo12"></p>
+
+
+<script type="text/javascript">
+	
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+
+function myFunction1() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo1").innerHTML = fruits.length;
+}
+
+
+function myFunction2() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+   document.getElementById("demo2").innerHTML = fruits.constructor;
+}
+
+
+function myFunction3() {
+  var hege = ["Cecilie", "Lone"];
+  var stale = ["Emil", "Tobias", "Linus"];
+  var children = hege.concat(stale); 
+  document.getElementById("demo3").innerHTML = children;
+}
+
+
+function myFunction4() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var a = fruits.indexOf("Apple");
+  document.getElementById("demo4").innerHTML = a;
+}
+
+
+function myFunction5() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = document.getElementById("demo5");
+  x.innerHTML = Array.isArray(fruits);
+}
+
+
+function myFunction6() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = document.getElementById("demo6");
+  x.innerHTML = fruits.join();
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo7").innerHTML = fruits;
+
+function myFunction7() {
+  fruits.pop();
+  document.getElementById("demo7").innerHTML = fruits;
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo8").innerHTML = fruits;
+
+function myFunction8() {
+  fruits.push("Kiwi");
+  document.getElementById("demo8").innerHTML = fruits;
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo9").innerHTML = fruits;
+
+function myFunction9() {
+  fruits.reverse();
+  document.getElementById("demo9").innerHTML = fruits;
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo10").innerHTML = fruits;
+
+function myFunction10() {
+  fruits.shift();
+  document.getElementById("demo10").innerHTML = fruits;
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo11").innerHTML = fruits;
+
+function myFunction11() {
+  fruits.unshift("Lemon", "Pineapple");
+  document.getElementById("demo11").innerHTML = fruits;
+}
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo12").innerHTML = fruits;
+
+function myFunction12() {
+  fruits.sort();
+  document.getElementById("demo12").innerHTML = fruits;
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS var vs let & Data Types</title>
+</head>
+<body>
+
+<h2>JavaScript var vs let, Data Types & Escape Characters</h2>
+
+<p id="output"></p>
+
+<script>
+    // ----------- var vs let -----------
+    var a = 10;   // var can be redeclared
+    var a = 20;
+
+    let b = 30;   // let cannot be redeclared
+    b = 40;       // but can be updated
+
+    // ----------- Data Types -----------
+    let num = 100;                // number
+    let str = "Hello \"World\"";  // string with escape characters
+    let bool = true;             // boolean
+    let undef;                   // undefined
+    let n = null;                // null
+
+    // ----------- Escape Characters -----------
+    let escapeText = "Line1\nLine2\tTabbed\n\"Quoted Text\"";
+
+    // ----------- Output using innerHTML -----------
+    document.getElementById("output").innerHTML =
+        "<b>var value:</b> " + a + "<br>" +
+        "<b>let value:</b> " + b + "<br><br>" +
+
+        "<b>Number:</b> " + num + "<br>" +
+        "<b>String:</b> " + str + "<br>" +
+        "<b>Boolean:</b> " + bool + "<br>" +
+        "<b>Undefined:</b> " + undef + "<br>" +
+        "<b>Null:</b> " + n + "<br><br>" +
+
+        "<b>Escape Characters:</b><br>" + escapeText.replace(/\n/g, "<br>");
+
+    // ----------- Console Output -----------
+    console.log("var a =", a);
+    console.log("let b =", b);
+    console.log("Escape Text:\n", escapeText);
+
+    // ----------- Alert -----------
+    window.alert("Check console and webpage output!");
+
+    // ----------- document.write -----------
+    document.write("<p>Displayed using document.write()</p>");
+
+</script>
+
+</body>
+</html>

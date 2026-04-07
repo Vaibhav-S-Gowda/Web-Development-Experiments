@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<body>
+
+<script type="text/javascript">
+//implicit string conversion
+var str = "Hello";
+var name = prompt("enter your name");
+var newStr;
+
+newStr = str + " " + name;
+document.write(newStr);
+document.write(typeof(newStr) + "<br/>");
+
+//explicit string conversion
+var num =6;
+var str_value = num.toString();
+var str_value_binary  =  num.toString(2);
+
+document.write(str_value);
+document.write(typeof(str_value) + "<br/>");
+document.write(str_value_binary);
+</script>
+
+</body>
+</html>

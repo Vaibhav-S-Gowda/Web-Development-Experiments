@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript String Functions</title>
+</head>
+<body>
+
+<h2>JavaScript String Functions Demo</h2>
+
+<p id="output"></p>
+<!--
+1.  str.length → returns number of characters
+2.  charAt(n) → character at position
+3.  indexOf() → first occurrence position
+4.  lastIndexOf() → last occurrence
+5.  substring(start, end) → extracts part
+6.  slice(start, end) → similar to substring
+7.  toUpperCase() / toLowerCase() → case conversion
+8.  replace() → replace text
+9.  concat() → joins strings
+10. trim() → removes spaces
+-->
+<script>
+    let str = "Hello World";
+
+    // String length
+    let length = str.length;
+
+    // String functions
+    let char = str.charAt(1);          // e
+    let index = str.indexOf("o");      // 4
+    let lastIndex = str.lastIndexOf("o"); // 7
+    let substring = str.substring(0,5);   // Hello
+    let slice = str.slice(6,11);       // World
+    let upper = str.toUpperCase();     // HELLO WORLD
+    let lower = str.toLowerCase();     // hello world
+    let replace = str.replace("World", "JS"); // Hello JS
+    let concat = str.concat("!!!");    // Hello World!!!
+    let trim = "   Hi   ".trim();      // Hi
+
+    // Display output
+    document.getElementById("output").innerHTML =
+        "<b>Original String:</b> " + str + "<br><br>" +
+
+        "<b>Length:</b> " + length + "<br>" +
+        "<b>charAt(1):</b> " + char + "<br>" +
+        "<b>indexOf('o'):</b> " + index + "<br>" +
+        "<b>lastIndexOf('o'):</b> " + lastIndex + "<br>" +
+        "<b>substring(0,5):</b> " + substring + "<br>" +
+        "<b>slice(6,11):</b> " + slice + "<br>" +
+        "<b>toUpperCase():</b> " + upper + "<br>" +
+        "<b>toLowerCase():</b> " + lower + "<br>" +
+        "<b>replace():</b> " + replace + "<br>" +
+        "<b>concat():</b> " + concat + "<br>" +
+        "<b>trim():</b> " + trim;
+
+    // Console output
+    console.log("String length:", length);
+</script>
+
+</body>
+</html>

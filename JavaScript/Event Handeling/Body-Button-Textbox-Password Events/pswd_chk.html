@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Illustrate Password Checking</title>
+
+  <!-- Link external JS -->
+  <script type="text/javascript" src="pswd_chk.js"></script>
+</head>
+
+<body>
+  <h3>Password Input</h3>
+
+  <!-- IMPORTANT: use onsubmit instead of onclick -->
+  <form id="myForm" action="" onsubmit="return chkPasswords()">
+    
+    <p>
+      <label>Your password
+        <input type="password" id="initial" size="10" />
+      </label>
+      <br><br>
+
+      <label>Verify password
+        <input type="password" id="second" size="10" />
+      </label>
+      <br><br>
+
+      <input type="reset" name="reset" />
+
+
+      <input type="submit" name="submit" />
+    </p>
+
+  </form>
+
+</body>
+</html>

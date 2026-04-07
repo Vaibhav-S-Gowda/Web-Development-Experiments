@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Math Functions Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Math & Trigonometric Functions</h2>
+<!--
+1.  Math.sin(x) → returns sine (x in radians)
+2.  Math.cos(x) → returns cosine
+3.  Math.floor(x) → rounds down
+4.  Math.ceil(x) → rounds up
+5.  Math.round(x) → nearest integer
+6.  Math.max() / Math.min() → largest/smallest value
+7.  Math.PI → 3.14159…
+8.  Math.pow(a, b) → a^b
+9.  Math.sqrt(x) → square root
+10. Math.abs(x) → absolute value
+11. Math.random() → random number (0–1)
+-->
+<p id="result"></p>
+
+<script>
+    let x = Math.PI / 4; // 45 degrees in radians
+
+    // Trigonometric functions
+    let sine = Math.sin(x);
+    let cosine = Math.cos(x);
+
+    // Number functions
+    let num = 4.7;
+
+    let floorVal = Math.floor(num);   // truncate down
+    let ceilVal = Math.ceil(num);     // round up
+    let roundVal = Math.round(num);   // nearest integer
+
+    // Max & Min
+    let maxVal = Math.max(10, 20, 5);
+    let minVal = Math.min(10, 20, 5);
+
+    // Other Math functions
+    let piVal = Math.PI;
+    let power = Math.pow(8, 2);
+    let sqrtVal = Math.sqrt(64);
+    let absVal = Math.abs(-4.7);
+
+    // Random values
+    let randomFloat = Math.random(); // 0 to 1
+    let randomInt = Math.floor(Math.random() * 100); // 0 to 99
+
+    // Display output
+    document.getElementById("result").innerHTML =
+        "<b>Trigonometric Functions:</b><br>" +
+        "sin(45°) = " + sine + "<br>" +
+        "cos(45°) = " + cosine + "<br><br>" +
+
+        "<b>Rounding Functions:</b><br>" +
+        "Math.floor(4.7) = " + floorVal + "<br>" +
+        "Math.ceil(4.7) = " + ceilVal + "<br>" +
+        "Math.round(4.7) = " + roundVal + "<br><br>" +
+
+        "<b>Max & Min:</b><br>" +
+        "Max = " + maxVal + "<br>" +
+        "Min = " + minVal + "<br><br>" +
+
+        "<b>Other Math Functions:</b><br>" +
+        "PI = " + piVal + "<br>" +
+        "8^2 = " + power + "<br>" +
+        "√64 = " + sqrtVal + "<br>" +
+        "|-4.7| = " + absVal + "<br><br>" +
+
+        "<b>Random Values:</b><br>" +
+        "Random Float = " + randomFloat + "<br>" +
+        "Random Integer (0-99) = " + randomInt;
+
+    // Console output
+    console.log("sin:", sine, "cos:", cosine);
+</script>
+
+</body>
+</html>

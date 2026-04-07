@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Built-in Functions Demo</h2>
+
+<p id="output"></p>
+<!--
+1.  isNaN(x) → checks if value is Not a Number
+2.  toString() → converts number to string
+3.  Implicit concatenation → "A" + 10
+4.  Explicit concatenation → 10.toString()
+5.  parseInt() → converts string to integer
+6.  parseFloat() → converts string to decimal
+7.  typeof → returns data type
+8.  Date() → gives current date and time
+-->
+<script>
+    // ----------- isNaN() -----------
+    let val1 = "Hello";
+    let val2 = 123;
+
+    let check1 = isNaN(val1); // true
+    let check2 = isNaN(val2); // false
+
+    // ----------- toString() -----------
+    let num = 100;
+    let strNum = num.toString();
+
+    // ----------- Concatenation -----------
+    // Implicit concatenation
+    let implicitConcat = "Number: " + 50;
+
+    // Explicit concatenation using toString()
+    let explicitConcat = "Number: " + (50).toString();
+
+    // ----------- parseInt() & parseFloat() -----------
+    let intVal = parseInt("123.45");   // 123
+    let floatVal = parseFloat("123.45"); // 123.45
+
+    // ----------- typeof -----------
+    let a = 10;
+    let b = "JS";
+    let c = true;
+
+    let typeA = typeof a;
+    let typeB = typeof b;
+    let typeC = typeof c;
+
+    // ----------- Date Object -----------
+    let currentDate = new Date();
+
+    // ----------- Display Output -----------
+    document.getElementById("output").innerHTML =
+        "<b>isNaN:</b><br>" +
+        "isNaN('Hello') = " + check1 + "<br>" +
+        "isNaN(123) = " + check2 + "<br><br>" +
+
+        "<b>toString:</b><br>" +
+        "100 to string = " + strNum + "<br><br>" +
+
+        "<b>Concatenation:</b><br>" +
+        "Implicit: " + implicitConcat + "<br>" +
+        "Explicit: " + explicitConcat + "<br><br>" +
+
+        "<b>parseInt & parseFloat:</b><br>" +
+        "parseInt('123.45') = " + intVal + "<br>" +
+        "parseFloat('123.45') = " + floatVal + "<br><br>" +
+
+        "<b>typeof:</b><br>" +
+        "typeof 10 = " + typeA + "<br>" +
+        "typeof 'JS' = " + typeB + "<br>" +
+        "typeof true = " + typeC + "<br><br>" +
+
+        "<b>Date Object:</b><br>" +
+        "Current Date & Time = " + currentDate;
+
+    // Console output
+    console.log("Date:", currentDate);
+
+</script>
+
+</body>
+</html>
