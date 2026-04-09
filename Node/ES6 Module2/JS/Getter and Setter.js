@@ -13,3 +13,9 @@ class Student {
         this.name = newName;
     }
 }
+
+let stu = new Student('Virat Kohli');
+console.log(stu);
+
+stu.setName('M. S. Dhoni');
+console.log(stu.getName());
