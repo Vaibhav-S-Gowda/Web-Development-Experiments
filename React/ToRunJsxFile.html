@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- ReactDOM -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="contents"></div>
+
+    <script type="text/babel">
+        const element = ( 
+            <div title="Outer div">
+                <h1>Hello World!</h1>
+            </div>
+        );
+
+        const root = ReactDOM.createRoot(document.getElementById('contents'));
+        root.render(element);
+    </script>
+</body>
+</html>
