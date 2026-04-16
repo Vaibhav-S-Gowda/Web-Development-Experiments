@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import Greetings from './Greetings';
 
 function App() {
   // return (
@@ -21,8 +22,29 @@ function App() {
   //   </div>
   // );
 
+//   let a = 10, b = 20;
+//   return (
+//     <div className='App'>
+//       <header className='App-header'>
+//         <h1>React is {a + b} times better with JSX</h1>
+//         <ul>
+//           <li>Apples</li>
+//           <li>Bananas</li>
+//           <li>Cherries</li>
+//         </ul>
+//         <p>End of the List</p>
+
+//         <label>Event Name:</label>
+//         <input type='text' id="event-name" className='color'></input>
+//         </header>
+//     </div>
+//   );
+
   return (
-    <h1>React is {5 + 5} times better with JSX</h1>
+    <div className='App'>
+      <Greetings name = "Shannu"/>
+      {/* <Greetings name = "Arjuna"/> */}
+    </div>
   );
 }
 
