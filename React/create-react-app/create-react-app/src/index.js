@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 // import App from './appcomposing';
-import App from './App-props';
+// import App from './App-props';
+import App from './AppDynamic';
 import reportWebVitals from './reportWebVitals';
+
 
 
 
