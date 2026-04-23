@@ -1,5 +1,4 @@
-import React from "react";
-import BookTable from "./BookTable";
+import BookTable from "./components/BookTable";
 
 function App() {
     const books = [
@@ -8,7 +7,7 @@ function App() {
             title: "React Basics",
             author: "Dan Abramov",
             price: 499,
-            published: new Date('04-04-2004'),
+            published: new Date('2004-04-04'),
             publisherName: "Springer"
         },
         {
@@ -16,8 +15,19 @@ function App() {
             title: "Javascript Essentials",
             author: "Brendan",
             price: 299,
-            published: new Date('04-04-2004'),
+            published: new Date('2004-04-04'),
             publisherName: "Springer"
         }
-    ]
+    ];
+
+    return (
+        <div className="App">
+            <header className="App-header">
+            <h1>Book Store</h1>
+            </header>
+            <BookTable books={books} />
+        </div>
+    );
 }
+
+export default App;
