@@ -4,7 +4,8 @@ import './index.css';
 // import App from './App';
 // import App from './appcomposing';
 // import App from './App-props';
-import App from './AppDynamic';
+// import App from './AppDynamic';
+import App from './components/Data-Flow';
 import reportWebVitals from './reportWebVitals';
 
 
