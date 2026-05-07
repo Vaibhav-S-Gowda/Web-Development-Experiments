@@ -1,0 +1,98 @@
+/* Global Reset + Typography */
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #eb0303, #ff6b02) no-repeat;
+  background-size: cover;
+  height: max-content;
+  color: #e5e7eb;
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Main App Container */
+.App {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Logo Styling */
+.App-logo {
+  height: 120px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
+}
+
+.App-logo:hover {
+  transform: scale(1.05) rotate(5deg);
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Controlled Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 25s linear;
+  }
+}
+
+/* Header Section */
+.App-header {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: auto;
+  max-width: 900px;
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Headline Text */
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+/* Supporting Text */
+.App-header p {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Links / Buttons */
+.App-link {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.App-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Animation Keyframes */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
