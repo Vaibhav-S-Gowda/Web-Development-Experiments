@@ -1,0 +1,108 @@
+/* Page Layout */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: #eef4ff;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
+
+/* Main Card */
+.App {
+    width: 50vw;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    background: #ffffff;
+
+    padding: 30px;
+    border-radius: 18px;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+
+    text-align: center;
+}
+
+/* Main Heading */
+h1 {
+    color: #1d4ed8;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+/* Section Headings */
+h3 {
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+/* Horizontal Line */
+hr {
+    border: none;
+    height: 1px;
+    background: #cbd5e1;
+    margin: 25px 0;
+}
+
+/* Inputs */
+input {
+    padding: 10px 12px;
+    margin: 5px;
+
+    border: 1px solid #93c5fd;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #f8fbff;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
+}
+
+/* Button */
+button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Country List */
+ul {
+    list-style-position: outside;
+    padding: 0;
+    padding-left: 100px;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #334155;
+    text-align: start;
+    padding-left: 10px;
+}
