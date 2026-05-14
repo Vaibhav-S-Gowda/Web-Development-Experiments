@@ -1,108 +1,99 @@
-/* Page Layout */
+/* Global Reset + Typography */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    background: #eef4ff;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1e293b;
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* background: linear-gradient(135deg, #eb0303, #ff6b02) no-repeat; */
+  color: azure;
+  background-size: cover;
+  height: max-content;
+  color: #e5e7eb;
+  
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Main Card */
+/* Main App Container */
 .App {
-    width: 50vw;
-    margin-top: 25px;
-    margin-bottom: 25px;
-
-    background: #ffffff;
-
-    padding: 30px;
-    border-radius: 18px;
-
-    border: 1px solid #dbeafe;
-
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
-
-    text-align: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-/* Main Heading */
-h1 {
-    color: #1d4ed8;
-    font-size: 42px;
-    margin-bottom: 25px;
+/* Logo Styling */
+.App-logo {
+  height: 120px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
 }
 
-/* Section Headings */
-h3 {
-    color: #2563eb;
-    margin-bottom: 18px;
+.App-logo:hover {
+  transform: scale(1.05) rotate(5deg);
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5));
 }
 
-/* Horizontal Line */
-hr {
-    border: none;
-    height: 1px;
-    background: #cbd5e1;
-    margin: 25px 0;
+/* Controlled Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 25s linear;
+  }
 }
 
-/* Inputs */
-input {
-    padding: 10px 12px;
-    margin: 5px;
+/* Header Section */
+.App-header {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: auto;
+  max-width: 900px;
+  min-height: 80vh;
 
-    border: 1px solid #93c5fd;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    outline: none;
-
-    font-size: 14px;
-
-    background: #f8fbff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
+/* Headline Text */
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
-/* Button */
-button {
-    padding: 10px 16px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #2563eb;
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: 600;
-
-    transition: 0.2s ease;
+/* Supporting Text */
+.App-header p {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-button:hover {
-    background: #1d4ed8;
+/* Links / Buttons */
+.App-link {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Country List */
-ul {
-    list-style-position: outside;
-    padding: 0;
-    padding-left: 100px;
+.App-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
-li {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #334155;
-    text-align: start;
-    padding-left: 10px;
-}
+/* Animation Keyframes */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
