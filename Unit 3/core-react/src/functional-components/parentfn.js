@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Child from "./childfn";
 
 function Parent() {
+
+    // State to store data recieved from child
     const [recievedData, setRecievedData] = useState('');
 
+    // Function to recieve data from child
     const handleDataFromChild = (data) => { setRecievedData(data) };
 
     return (
